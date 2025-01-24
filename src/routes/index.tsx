@@ -10,7 +10,7 @@ import PaymentSelect from '../pages/PaymentSelect'
 import MainPage from '@/pages/MainPage'
 import DiningSelection from '@/pages/DiningSelection'
 import PaymentResult from '@/pages/PaymentResult'
-import Voice from '@/component/voice/Voice'
+import Voice from '@/components/voice/Voice'
 
 const routes = createBrowserRouter([
     {

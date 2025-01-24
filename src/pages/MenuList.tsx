@@ -3,12 +3,12 @@ import { useEffect, useMemo, useState } from "react";
 import { menu_items } from "../assets/data/menu.json";
 import { menu_categories } from "../assets/data/category.json";
 import { MenuCategory } from "../types/category.interface";
-import Header from "@/component/menu-list/Header";
-import Sidebar from "@/component/menu-list/Sidebar";
-import TasteFilter from "@/component/menu-list/TasteFilter";
-import FilteredMenuList from "@/component/menu-list/FilteredMenuList";
-import VoiceBtn from "@/component/voice/VoiceBtn";
-import CartButton from "@/component/CartButton";
+import Header from "@/components/menu-list/Header";
+import Sidebar from "@/components/menu-list/Sidebar";
+import TasteFilter from "@/components/menu-list/TasteFilter";
+import FilteredMenuList from "@/components/menu-list/FilteredMenuList";
+import VoiceBtn from "@/components/voice/VoiceBtn";
+import CartButton from "@/components/CartButton";
 import GuidePopup from "@/components/GuidePopup";
 import useGuidePopupStore from "@/store/useGuidePopupStore";
 

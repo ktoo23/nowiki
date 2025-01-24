@@ -1,7 +1,7 @@
 import { useLocation, useNavigate, useParams } from "react-router-dom";
-import AddShoppingCartButton from "@/component/AddShoppingCartButton";
-import QuickPayButton from "@/component/QuickPayButton";
-import CancelButton from "@/component/CancelButton";
+import AddShoppingCartButton from "@/components/AddShoppingCartButton";
+import QuickPayButton from "@/components/QuickPayButton";
+import CancelButton from "@/components/CancelButton";
 import { menu_items } from "../assets/data/menu.json";
 
 import { getOrderInfo, setItemToOrderInfo } from "@/feat/order";
