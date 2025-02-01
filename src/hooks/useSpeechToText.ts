@@ -1,8 +1,8 @@
 import { useState, useEffect, useRef } from 'react'
 
 const useSpeechToText = () => {
-    const [transcript, setTranscript] = useState<string>('')
-    const [listening, setListening] = useState<boolean>(false)
+    const [transcript, setTranscript] = useState('')
+    const [listening, setListening] = useState(false)
     const recognition = useRef<SpeechRecognition | null>(null)
 
     // Web Speech API 초기화

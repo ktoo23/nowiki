@@ -1,12 +1,12 @@
 import { MenuItem } from '@/types/menu.interface'
 
-type Props = {
-    items: MenuItem[]
-    onClick: (item: MenuItem) => void
-    selectedItems: MenuItem[]
+type VoiceSearchedMenuListProps = {
+	items:MenuItem[]
+	handleMenuItemClick: (item: MenuItem) => void
+	selectedItems: MenuItem[]
 }
 
-const VoiceSearchedMenuList = ({ items, onClick, selectedItems }: Props) => {
+const VoiceSearchedMenuList = ({ items, handleMenuItemClick, selectedItems }: VoiceSearchedMenuListProps) => {
     return (
         <ul className='grid grid-cols-2 gap-4 sm:gap-6'>
             {items.map((item) => {
@@ -17,7 +17,7 @@ const VoiceSearchedMenuList = ({ items, onClick, selectedItems }: Props) => {
                         className={`bg-[#F8F8F8] rounded-[10px] text-center cursor-pointer overflow-hidden ${
                             isSelected ? 'ring-2 ring-yellow-400' : ''
                         }`}
-                        onClick={() => onClick(item)}
+                        onClick={() => handleMenuItemClick(item)}
                     >
                         <div className='mb-2'>
                             <img

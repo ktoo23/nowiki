@@ -157,7 +157,7 @@ const Voice = () => {
                                 items={searchResults.map(
                                     (result) => result.item
                                 )}
-                                onClick={handleMenuItemClick}
+                                handleMenuItemClick={handleMenuItemClick}
                                 selectedItems={selectedMenuItems}
                             />
                         </div>
@@ -170,7 +170,7 @@ const Voice = () => {
                                 items={recommendedMenu.map(
                                     (result) => result.item
                                 )}
-                                onClick={handleMenuItemClick}
+                                handleMenuItemClick={handleMenuItemClick}
                                 selectedItems={selectedMenuItems}
                             />
                         </div>

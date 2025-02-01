@@ -9,6 +9,7 @@ import { Button } from "@/components/ui/button";
 import { useState } from "react";
 import useGuidePopupStore from "@/store/useGuidePopupStore";
 import GuidePopup from "@/components/GuidePopup";
+import useSpeechFeedback from "@/hooks/useSppechFeedback";
 
 const MenuSelect = () => {
   const navigate = useNavigate();
@@ -23,6 +24,8 @@ const MenuSelect = () => {
     getOrderInfo().orderItem || [],
   );
 
+	const { speak } = useSpeechFeedback();
+
   const handleAddShoppingCart = () => {
     setCurrentCart([...currentCart, menu]);
 
@@ -30,6 +33,8 @@ const MenuSelect = () => {
     //   alert("예상치 못한 오류로 인해\n 첫화면으로 넘어갑니다");
     //   return navigate("/");
     // }
+
+		speak("장바구니에 추가되었습니다.");
     alert("장바구니에 추가되었습니다.");
   };
 
