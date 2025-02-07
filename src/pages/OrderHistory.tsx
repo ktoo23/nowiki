@@ -7,15 +7,14 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
-import {
-  getOrderInfo,
-} from "@/feat/order";
+import { getOrderInfo } from "@/feat/order";
 import OrderItemInCart from "@/components/OrderItemInCart";
 
 const OrderHistory = () => {
   const navigate = useNavigate();
-  const [orderItemData, setOrderItemData] = useState(getOrderInfo().orderItem || []);
-
+  const [orderItemData, setOrderItemData] = useState(
+    getOrderInfo().orderItem || [],
+  );
 
   const openPointVerificationPage = () => {
     navigate("/point-collection");
