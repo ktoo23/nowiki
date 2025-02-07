@@ -4,6 +4,15 @@ import { Button } from "@/components/ui/button";
 import { completeOrder } from "@/feat/order";
 import useSpeechFeedback from "@/hooks/useSpeechFeedback";
 
+interface CustomWindow extends Window {
+  IMP: any;
+}
+
+declare let window: CustomWindow;
+
+const { IMP } = window;
+IMP.init("imp01813062");
+
 const CardPayment = () => {
   const { speak } = useSpeechFeedback();
   const naviate = useNavigate();
@@ -17,6 +26,14 @@ const CardPayment = () => {
     if (!result) {
       alert("주문에 오류가 발생했습니다");
     }
+    IMP.request_pay({
+      pg: "kakaopay",
+      pay_method: "card",
+      merchant_uid: "merchant_" + new Date().getTime(),
+      name: "주문명:결제테스트",
+      amount: 14000,
+      buyer_email: "",
+    });
     speak("결제가 완료되었습니다.");
     naviate("/payment-result");
   };
