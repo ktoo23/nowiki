@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import {
@@ -15,6 +15,14 @@ import OrderItemInCart from "@/components/OrderItemInCart";
 const OrderHistory = () => {
   const navigate = useNavigate();
   const [orderItemData, setOrderItemData] = useState(getOrderInfo().orderItem || []);
+  const [totalPrice, setTotalPrice] = useState(0);
+
+  useEffect(() => {
+    if (orderItemData.length === 0) {
+      return 
+    }
+    setTotalPrice(orderItemData.map(item => item.count*item.price).reduce((a, b) => a + b))
+  },[orderItemData])
 
 
   const openPointVerificationPage = () => {
@@ -39,6 +47,8 @@ const OrderHistory = () => {
     navigate("/menus");
   };
 
+  
+
   return (
     <div className="max-w-[640px] content-center h-dvh flex flex-col px-4 py-6">
       <div className="flex justify-around">
@@ -56,8 +66,10 @@ const OrderHistory = () => {
           </div>
         ))}
       </div>
-
       <div className="fixed bottom-0 left-0 right-0 p-4 bg-white">
+        <div className="text-2xl font-bold text-gray-800 mb-5 text-center">
+          <span>총 금액 : { totalPrice.toLocaleString() }원</span>
+        </div>
         <div className="flex justify-center gap-4">
           <div className="flex flex-col space-y-1">
             {/* <div className="bg-yellow-100 text-yellow-800 font-semibold text-lg rounded-md text-center absolute left-[33%] top-1 px-4">
